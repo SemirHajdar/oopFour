@@ -8,6 +8,7 @@ public class MainRunner {
     public static void main(String[] args) {
 
         ArrayList<Shape> myShapes = new ArrayList<>();
+        char answerForMoreCalculation=0;
 
         Double radius = 0.00;
         Double length = 0.00;
@@ -27,7 +28,7 @@ public class MainRunner {
                     radius = reader.nextDouble();
                     myShapes.add(new Circle(radius));
                 }
-                finalResult(myShapes);
+
             } else if (shapeAnswer == 2) {
                 int numberOfRepeat = secondMenu();
                 for (int i = 0; i < numberOfRepeat; i++) {
@@ -37,7 +38,7 @@ public class MainRunner {
                     width = reader.nextDouble();
                     myShapes.add(new Rectangular(length, width));
                 }
-                finalResult(myShapes);
+
             } else if (shapeAnswer == 3) {
                 int numberOfRepeat = secondMenu();
                 for (int i = 0; i < numberOfRepeat; i++) {
@@ -51,9 +52,14 @@ public class MainRunner {
                     height = reader.nextDouble();
                     myShapes.add(new Triangle(sideA, sideB, sideC, height));
                 }
-                finalResult(myShapes);
+
             }
-        } while (true);
+            System.out.println("Do you want more calculation ? Enter y/n");
+            answerForMoreCalculation=reader.next().toLowerCase().charAt(0);
+
+        } while (answerForMoreCalculation=='y');
+
+        finalResult(myShapes);
     }
     public static void menu (){
         System.out.println('\n' + "MENU:" + '\n');
@@ -79,8 +85,8 @@ public class MainRunner {
     public static void finalResult (ArrayList<Shape>shape){
         for (Shape finalResult:shape){
             try {
-                System.out.println("Area of shape is:" + finalResult.Area());
-                System.out.println("Circumference of shape is:" + finalResult.Circumference());
+                System.out.println("Area of shape is:" + finalResult.area());
+                System.out.println("Circumference of shape is:" + finalResult.circumference());
             } catch (IllegalArgumentException error){
                 System.out.println(error.getMessage());
             }
