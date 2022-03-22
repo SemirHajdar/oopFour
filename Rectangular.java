@@ -11,7 +11,7 @@ public class Rectangular extends Shape {
         this.width=width;
     }
     @Override
-    public double Circumference (){
+    public double circumference (){
         circumference = 2*(length+width);
         if (circumference<0)
             throw new IllegalArgumentException("Circumference of Rectangular is less then 0, please check your Inputs!!");
@@ -19,7 +19,7 @@ public class Rectangular extends Shape {
     }
 
     @Override
-    public double Area (){
+    public double area (){
         area = length*width;
         if (area<0)
             throw new IllegalArgumentException("Area of Rectangular is less then 0 please check your Inputs!!");
