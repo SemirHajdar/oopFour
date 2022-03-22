@@ -1,8 +1,8 @@
 package oopFour;
 
 public abstract class Shape {
-    protected abstract double Circumference ();
-    protected abstract double Area ();
+    protected abstract double circumference ();
+    protected abstract double area ();
 
 }
 //        1.Napraviti apstraktnu klasu Shape
